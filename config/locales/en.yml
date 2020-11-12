@@ -30,4 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app_title: ImmyEvents
+  app_description: An event manager for you!
+
+  home:
+    home:
+      title: Find and Book Events Here!
+      welcome: Welcome to ImmyEvents - Event Manager

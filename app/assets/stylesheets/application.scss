@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ $font: 'Times New Roman', 'Times', serif;
+ $color: Salmon;
+
+ body {
+   font-family: $font;
+   background-color: $color;
+   margin: 10px;
+   padding: 10px;
+ }
+
+ h1 {
+   text-transform: uppercase;
+ }
