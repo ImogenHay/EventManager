@@ -33,14 +33,17 @@ en:
   app_title: ImmyEvents
   app_description: An event manager for you!
 
-  home: #in home controller
-    home: #in home view
-      welcome: Welcome to ImmyEvents - Event Manager
-      title: Find and Book Events Here!
+  home: #in home view
+    home: #in home html file
+      title: Welcome to ImmyEvents - Event Manager
+      description: Find and Book Events Here!
+    contact: #in contact html file
+      title: Contact Us
+      contact_us: Complete the following form to get in touch with us.
 
-  shared:
-    header:
+  shared: #in shared view
+    header: #in header file
       header: ImmyEvents
-    footer:
+    footer: #in footer file
       copyright: "&copy;"
       footer: ImmyEvents - Event manager for you
