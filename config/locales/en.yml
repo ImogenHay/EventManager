@@ -37,9 +37,24 @@ en:
     home: #in home html file
       title: Welcome to ImmyEvents - Event Manager
       description: Find and Book Events Here!
+      
     contact: #in contact html file
       title: Contact Us
       contact_us: Complete the following form to get in touch with us.
+
+      name: "Name:" #strings for contact form
+      enter_name: Enter your name
+      email: "Email:"
+      enter_email: Enter your email address
+      telephone: "Telephone:"
+      enter_telephone: Enter your telephone number
+      message: "Message:"
+      enter_message: What do you want to say?
+      submit: Contact Us
+
+    request_contact: #when contact form submitted
+      no_email: You must supply an email address
+      email_sent: Thank you. We will be in touch shortly.
 
   shared: #in shared view
     header: #in header file
