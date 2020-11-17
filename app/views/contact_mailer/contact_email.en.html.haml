@@ -1,0 +1,15 @@
+%p= "Dear #{t('app_title')},"         #en means file is english version so contains its localised strings
+%p= "Could you get in touch with me please?"
+
+%dl
+  %dt Name:
+  %dd= @name
+  %dt Email:
+  %dd= @email
+  %dt Telephone:
+  %dd= @telephone
+
+%p= @message
+
+%p Thanks,
+%p= @name
