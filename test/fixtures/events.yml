@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location: one
+  type: 
+  date: 2020-11-23
+  description: MyText
+  start: 2020-11-23 17:37:35
+  end: 2020-11-23 17:37:35
+  tickets: 1
+  price: 9.99
+
+two:
+  name: MyString
+  location: two
+  type: 
+  date: 2020-11-23
+  description: MyText
+  start: 2020-11-23 17:37:35
+  end: 2020-11-23 17:37:35
+  tickets: 1
+  price: 9.99

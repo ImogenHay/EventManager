@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   resources :locations
   root 'home#home' #sets home page/root to home/home
   get 'contact', to: 'home#contact' #root/contact url will bring to contact page (home controller, contact method)
