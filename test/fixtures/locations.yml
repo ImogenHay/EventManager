@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Title1
   description: MyText
   country: MyString
   street: MyString
   postcode: MyString
 
 two:
-  name: MyString
+  name: Title2
   description: MyText
   country: MyString
   street: MyString
