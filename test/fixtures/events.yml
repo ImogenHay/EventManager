@@ -3,7 +3,7 @@
 one:
   name: MyString
   location: one
-  #event_type:
+  event_type: Type
   date: 2020-11-23
   description: MyText
   start: 2020-11-23 17:37:35
@@ -14,7 +14,7 @@ one:
 two:
   name: MyString
   location: two
-  #event_type: 
+  event_type: Type
   date: 2020-11-23
   description: MyText
   start: 2020-11-23 17:37:35

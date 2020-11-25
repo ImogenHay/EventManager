@@ -37,7 +37,7 @@ en:
     home: #in home html file
       title: Welcome to ImmyEvents - Event Manager
       description: Find and Book Events Here!
-      
+
     contact: #in contact html file
       title: Contact Us
       contact_us: Complete the following form to get in touch with us.
@@ -62,3 +62,9 @@ en:
     footer: #in footer file
       copyright: "&copy;"
       footer: ImmyEvents - Event manager for you
+
+  locations: #in locations view
+    show: #in show file
+      add_event: Add Event
+      edit: Edit
+      back: Back

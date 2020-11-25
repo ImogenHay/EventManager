@@ -11,7 +11,8 @@
     = f.text_field :name
   .field
     = f.label :location
-    = f.text_field :location
+    %p= @event.location.name
+    = f.hidden_field :location_id, value: @event.location.id
   .field
     = f.label :event_type
     = f.text_field :event_type

@@ -5,7 +5,7 @@ class EventTest < ActiveSupport::TestCase
   #   assert true
   # end
   setup do # called before every test (just like in JUnit): sets a property to a location in the database from our fixtures
-    @location = location(:one)
+    @location = locations(:one)
   end
 
   test 'should not save empty event' do #test which shows that an empty event cannot be saved

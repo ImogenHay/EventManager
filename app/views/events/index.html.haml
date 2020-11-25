@@ -20,8 +20,8 @@
     - @events.each do |event|
       %tr
         %td= event.name
-        %td= event.location
-        %td= event.type
+        %td= event.location.name
+        %td= event.event_type
         %td= event.date
         %td= event.description
         %td= event.start
