@@ -2,8 +2,8 @@ class CreateEvents < ActiveRecord::Migration[5.2]
   def change
     create_table :events do |t|
       t.string :name, null: false
-      t.belongs_to :location, foreign_key: true, null: false
-      t.string :type
+      t.belongs_to :location, index:true, foreign_key: true, null: false
+      t.string :event_type
       t.date :date, null: false
       t.text :description
       t.time :start

@@ -12,3 +12,12 @@ location1.delete if location1 #if location1 record found delete it from db so no
 
 locations = Location.create([name: 'Felbridge Village Hall', description: 'Welcome to the Felbridge Village Hall. A much loved building at the heart of the Village. The Village Hall has all the amenities that you need and is a very versatile space. There is a large entrance lobby, Mens, Ladies & Disabled toilet facilities.', country: 'UK', street: '49 Crawley Down Rd', postcode: 'RH19 2NT'])
 # Use the ORM again to create Location records in the database from an array of records, each entry defining a hash of the fields
+
+
+
+#event1 = Event.where(name: 'Christmas Market').first #uses the event ORM to find any existing events with that name
+                                                       #“first” returns the first record found, if any
+#event1.delete if event1 #if event1 record found delete it from db so no repeats
+
+#event = Event.create([date: '24/12/2020', description: 'Selling wonderful Christmas gifts!', location_id: 'Felbridge Village Hall', name: 'Christmas Market', event_type: 'Market'])
+# Use the ORM again to create event records in the database from an array of records, each entry defining a hash of the fields
