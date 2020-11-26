@@ -16,6 +16,16 @@
   %b Postcode:
   = @location.postcode
 
+%p Events:
+%table
+  %tbody
+    - @location.events.each do |event|
+      %tr
+        %td= event.name
+        %td= link_to 'Show', event
+        %td= link_to 'Edit', edit_event_path(event)
+        %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
 %p= link_to t('.add_event'), new_event_path(location_id: @location)
 
 = link_to t('.edit'), edit_location_path(@location)
