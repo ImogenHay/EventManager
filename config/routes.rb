@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reviews
   resources :events
   resources :locations
   root 'home#home' #sets home page/root to home/home
