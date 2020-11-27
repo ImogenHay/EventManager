@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_181522) do
+ActiveRecord::Schema.define(version: 2020_11_26_210824) do
 
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2020_11_24_181522) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_locations_on_name", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "location_id", null: false
+    t.text "description"
+    t.integer "rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["location_id"], name: "index_reviews_on_location_id"
   end
 
 end

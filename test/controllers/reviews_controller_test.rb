@@ -3,6 +3,7 @@ require 'test_helper'
 class ReviewsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @review = reviews(:one)
+    @location = locations(:one)
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create review" do
     assert_difference('Review.count') do
-      post reviews_url, params: { review: { description: @review.description, location_id: @review.location_id, rating: @review.rating } }
+      post reviews_url, params: { review: { description: @review.description, location_id: @location.id, rating: @review.rating } }
     end
 
     assert_redirected_to review_url(Review.last)
@@ -34,7 +35,7 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update review" do
-    patch review_url(@review), params: { review: { description: @review.description, location_id: @review.location_id, rating: @review.rating } }
+    patch review_url(@review), params: { review: { description: @review.description, location_id: @location.id, rating: @review.rating } }
     assert_redirected_to review_url(@review)
   end
 
