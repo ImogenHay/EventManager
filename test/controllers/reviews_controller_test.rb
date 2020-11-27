@@ -12,7 +12,7 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_review_url
+    get new_review_url, params: {location_id: @location.id}
     assert_response :success
   end
 

@@ -28,6 +28,8 @@
 
 %p= link_to t('.add_event'), new_event_path(location_id: @location)
 
+%p= link_to t('.add_review'), new_review_path(location_id: @location)
+
 = link_to t('.edit'), edit_location_path(@location)
 \|
 = link_to t('.back'), locations_path

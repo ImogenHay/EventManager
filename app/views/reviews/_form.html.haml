@@ -8,7 +8,8 @@
 
   .field
     = f.label :location
-    = f.text_field :location
+    %p= @review.location.name
+    = f.hidden_field :location_id, value: @review.location.id
   .field
     = f.label :description
     = f.text_area :description

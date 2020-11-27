@@ -66,5 +66,6 @@ en:
   locations: #in locations view
     show: #in show file
       add_event: Add Event
+      add_review: Add Review
       edit: Edit
       back: Back

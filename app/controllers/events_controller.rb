@@ -71,11 +71,9 @@ class EventsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def event_params
       params.require(:event).permit(:name, :location_id, :event_type, :date, :description, :start, :end, :tickets, :price)
-      #params.fetch(:event, {}).permit(:name, :location_id, :event_type, :date, :description, :start, :end, :tickets, :price)
     end
 
     def set_location
-      #@location = Location.find_by(id: params[:location_id]) || Location.find(event_params[:location_id])
       @location = Location.find_by(id: params[:location_id]) || Location.find(event_params[:location_id])
     end
 end

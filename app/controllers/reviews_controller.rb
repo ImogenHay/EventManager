@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_location, only: [:new, :create]
   # GET /reviews
   # GET /reviews.json
   def index
@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    @review = @location.reviews.new
   end
 
   # GET /reviews/1/edit
@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
+    @review = @location.reviews.new(review_params)
 
     respond_to do |format|
       if @review.save
@@ -70,5 +70,9 @@ class ReviewsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def review_params
       params.require(:review).permit(:location_id, :description, :rating)
+    end
+
+    def set_location
+      @location = Location.find_by(id: params[:location_id]) || Location.find(review_params[:location_id])
     end
 end

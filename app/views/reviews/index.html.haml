@@ -13,7 +13,7 @@
   %tbody
     - @reviews.each do |review|
       %tr
-        %td= review.location
+        %td= review.location.name
         %td= review.description
         %td= review.rating
         %td= link_to 'Show', review
