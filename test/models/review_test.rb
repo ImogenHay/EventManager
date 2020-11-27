@@ -24,4 +24,16 @@ class ReviewTest < ActiveSupport::TestCase
     review.save
     assert review.valid?
   end
+
+  test 'should not save invalid review ratings' do #A test which shows that invalid ratings wont be saved
+    review1 = Review.new
+    review1.location = @location #set the review's location to be the fixture referenced during “setup”
+    review1.rating = '0'
+    refute review1.valid?
+
+    review2 = Review.new
+    review2.location = @location #set the review's location to be the fixture referenced during “setup”
+    review2.rating = '6'
+    refute review2.valid?
+  end
 end

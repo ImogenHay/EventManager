@@ -8,4 +8,4 @@ one:
 two:
   location: two
   description: MyText
-  rating: 1
+  rating: 5
