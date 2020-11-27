@@ -28,6 +28,18 @@
 
 %p= link_to t('.add_event'), new_event_path(location_id: @location)
 
+%p Reviews:
+%table
+  %tbody
+    - @location.reviews.each do |review|
+      %tr{id: "review_#{review.id}"}
+        %td= review.rating
+        %td= link_to 'Show', review
+        %td= link_to 'Edit', edit_review_path(review)
+        %td= link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true
+
+
+
 %p= link_to t('.add_review'), new_review_path(location_id: @location)
 
 = link_to t('.edit'), edit_location_path(@location)
