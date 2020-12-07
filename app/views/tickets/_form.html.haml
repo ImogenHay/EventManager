@@ -8,7 +8,8 @@
 
   .field
     = f.label :event
-    = f.text_field :event
+    %p= @ticket.event.name
+    = f.hidden_field :event_id, value: @ticket.event.id
   .field
     = f.label :first_name
     = f.text_field :first_name

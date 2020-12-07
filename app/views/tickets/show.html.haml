@@ -1,14 +1,23 @@
 %p#notice= notice
 
 %p
-  %b Event:
-  = @ticket.event
-%p
   %b First name:
   = @ticket.first_name
 %p
   %b Last name:
   = @ticket.last_name
+%p
+  %b Event:
+  = @ticket.event.name
+%p
+  %b Location:
+  = @ticket.event.location.name
+%p
+  %b Date:
+  = @ticket.event.date
+%p
+  %b Start:
+  = @ticket.event.start
 %p
   %b Age:
   = @ticket.age

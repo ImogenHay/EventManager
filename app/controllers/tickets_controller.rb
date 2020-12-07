@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_event, only: [:new, :create]
   # GET /tickets
   # GET /tickets.json
   def index
@@ -14,7 +14,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/new
   def new
-    @ticket = Ticket.new
+    @ticket = @event.tickets.new
   end
 
   # GET /tickets/1/edit
@@ -24,7 +24,7 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = Ticket.new(ticket_params)
+    @ticket = @event.tickets.new(ticket_params)
 
     respond_to do |format|
       if @ticket.save
@@ -71,4 +71,9 @@ class TicketsController < ApplicationController
     def ticket_params
       params.require(:ticket).permit(:event_id, :first_name, :last_name, :age)
     end
+
+    def set_event
+      @event = Event.find_by(id: params[:event_id]) || Event.find(ticket_params[:event_id])
+    end
+
 end

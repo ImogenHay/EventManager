@@ -12,7 +12,7 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_ticket_url
+    get new_ticket_url, params: {event_id: @event.id}
     assert_response :success
   end
 
