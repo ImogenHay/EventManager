@@ -8,7 +8,7 @@ one:
   description: MyText
   start: 2020-11-23 17:37:35
   end: 2020-11-23 17:37:35
-  tickets: 1
+  num_tickets: 1
   price: 9.99
 
 two:
@@ -19,5 +19,5 @@ two:
   description: MyText
   start: 2020-11-23 17:37:35
   end: 2020-11-23 17:37:35
-  tickets: 1
+  num_tickets: 1
   price: 9.99

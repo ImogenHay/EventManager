@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  belongs_to :location
   has_many :tickets, dependent: :destroy
+  belongs_to :location
   validates :name, :location, :date, presence: true
 end
