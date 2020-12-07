@@ -57,6 +57,7 @@ class TicketsController < ApplicationController
     @ticket.destroy
     respond_to do |format|
       format.html { redirect_to tickets_url, notice: 'Ticket was successfully destroyed.' }
+      format.js { flash[:notice] = 'Ticket was successfully destroyed.'}
       format.json { head :no_content }
     end
   end
