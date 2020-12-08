@@ -28,16 +28,17 @@
   %b Price:
   = @event.price
 
-%b Tickets Booked:
+%b Your Tickets:
 %table
   %tbody
     - @event.tickets.each do |ticket|
-      %tr{id: "ticket_#{ticket.id}"}
-        %td= ticket.first_name
-        %td= ticket.last_name
-        %td= link_to 'Show', ticket
-        %td= link_to 'Edit', edit_ticket_path(ticket)
-        %td= link_to 'Destroy', ticket, :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true
+      - if ticket.user == current_user
+        %tr{id: "ticket_#{ticket.id}"}
+          %td= ticket.first_name
+          %td= ticket.last_name
+          %td= link_to 'Show', ticket
+          %td= link_to 'Edit', edit_ticket_path(ticket)
+          %td= link_to 'Destroy', ticket, :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true
 
 %p= link_to 'Book Ticket', new_ticket_path(event_id: @event)
 
