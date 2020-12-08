@@ -32,10 +32,13 @@
   %tbody
     - @location.reviews.each do |review|
       %tr{id: "review_#{review.id}"}
+        %td= review.user.email
         %td= review.rating
-        %td= link_to 'Show', review
-        %td= link_to 'Edit', edit_review_path(review)
-        %td= link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true
+        %td='Star'
+        - if review.user == current_user
+          %td= link_to 'Show', review
+          %td= link_to 'Edit', edit_review_path(review)
+          %td= link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true
 
 
 
