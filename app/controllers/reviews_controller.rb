@@ -1,10 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :set_location, only: [:new, :create]
+  before_action :authenticate_user!
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.all
+    @reviews = Review.user_reviews(current_user) #scope uses devise current user object to restrict search
   end
 
   # GET /reviews/1
@@ -25,6 +26,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = @location.reviews.new(review_params)
+    @review.user = current_user
 
     respond_to do |format|
       if @review.save
