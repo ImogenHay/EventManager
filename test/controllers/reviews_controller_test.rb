@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class ReviewsControllerTest < ActionDispatch::IntegrationTest
+
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @review = reviews(:one)
     @location = locations(:one)

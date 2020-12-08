@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
+
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @event = events(:one)
     @location = locations(:one)

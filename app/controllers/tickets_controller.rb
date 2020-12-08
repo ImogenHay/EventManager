@@ -5,7 +5,7 @@ class TicketsController < ApplicationController
   # GET /tickets
   # GET /tickets.json
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.user_tickets(current_user) #scope uses devise current user object to restrict search
   end
 
   # GET /tickets/1
@@ -26,6 +26,7 @@ class TicketsController < ApplicationController
   # POST /tickets.json
   def create
     @ticket = @event.tickets.new(ticket_params)
+    @ticket.user = current_user
 
     respond_to do |format|
       if @ticket.save
