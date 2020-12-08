@@ -51,4 +51,10 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to reviews_url
   end
+
+  test "redirect if signed out" do
+    sign_out @user
+    get review_url(@review)
+    assert_redirected_to user_session_path, "User is not redirected!"
+  end
 end

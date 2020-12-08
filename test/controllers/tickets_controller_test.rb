@@ -4,6 +4,7 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
 
   include Devise::Test::IntegrationHelpers
 
+
   setup do
     @ticket = tickets(:one)
     @event = events(:one)
@@ -50,5 +51,11 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to tickets_url
+  end
+
+  test "redirect if signed out" do
+    sign_out @user
+    get ticket_url(@ticket)
+    assert_redirected_to user_session_path, "User is not redirected!"
   end
 end
