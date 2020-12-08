@@ -19,9 +19,6 @@
 
     = render 'shared/header'
 
-    - flash.each do |key, value|      #for each flash (use - since no HTML output)
-      = content_tag :div, content_tag(:h2, value), id: "#{key}" unless value.blank?
-
     = yield
 
     = render 'shared/footer'
