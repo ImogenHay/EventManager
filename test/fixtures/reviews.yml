@@ -2,10 +2,12 @@
 
 one:
   location: one
+  user: one
   description: MyText
   rating: 1
 
 two:
   location: two
+  user: two
   description: MyText
   rating: 5

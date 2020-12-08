@@ -7,6 +7,8 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @review = reviews(:one)
     @location = locations(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do
