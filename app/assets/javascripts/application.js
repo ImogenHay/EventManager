@@ -10,9 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap-sprockets
+
 //= require jquery3
 //= require jquery_ujs
+//= require jquery.validate
+//= require bootstrap-sprockets
 //= require activestorage
 //= require turbolinks
 //= require_tree .
@@ -37,10 +39,32 @@ function SetPageStyle(val){
   }
 }
 
+function ValidateLocationForm(){
+  $('#LocationForm').validate({
+    rules: {
+      'location[name]': {required: true},
+      'location[country]': {required: true},
+      'location[street]': {required: true},
+      'location[postcode]': {required: true},
+
+    },
+    messages: {
+      'location[name]': {required: "You must provide the location name"},
+      'location[country]': {required: "You must provide a country"},
+      'location[street]': {required: "You must provide a street name"},
+      'location[postcode]': {required: "You must provide a postcode"},
+    }
+  });
+}
+
 $(document).ready(function() {
 
   if(document.getElementById('welcome_id')){
     $('#currentp, #venuesp, #accountsp, #accessibilityp').hide();
+  }
+
+  if(document.getElementById('LocationForm')){
+    ValidateLocationForm();
   }
 
 
