@@ -22,10 +22,25 @@ function ToggleText(elem){
   $('#'+elem.id+"p").toggle();
 }
 
+function SetFontSize(val){
+  $("*").each(function(i,e){e.style.fontSize = val});
+}
+
+function SetPageStyle(val){
+  if(val === 'Normal'){
+    $("*").each(function(i,e){e.style.background = "salmon"});
+    $("*").each(function(i,e){e.style.color = "rgb(53, 54, 67)"});
+  }
+  else{
+    $("*").each(function(i,e){e.style.background = "rgb(53, 54, 67)"});
+    $("*").each(function(i,e){e.style.color = "salmon"});
+  }
+}
+
 $(document).ready(function() {
 
   if(document.getElementById('welcome_id')){
-    $('#currentp, #venuesp, #accountsp').hide();
+    $('#currentp, #venuesp, #accountsp, #accessibilityp').hide();
   }
 
 

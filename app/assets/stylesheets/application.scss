@@ -17,15 +17,18 @@
  @import "bootstrap";
 
  $font: 'Times New Roman', 'Times', serif;
- $color: Salmon;
+ $background_color: Salmon;
+ $text_color: rgb(53, 54, 67);
 
  body {
    font-family: $font;
-   background-color: $color;
+   background-color: $background_color;
    margin: 10px;
    padding: 10px;
+   color: $text_color;
  }
 
  h1 {
    text-transform: uppercase;
+   color: $text_color;
  }

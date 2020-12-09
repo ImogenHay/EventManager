@@ -9,3 +9,16 @@
 
 %h2{id: "accounts", onclick: "ToggleText(this)"} Accounts
 %p{id: "accountsp"} Sign up for an ImmyEvents account to book tickets and leave reviews!
+
+
+
+%h2{id: "accessibility", onclick: "ToggleText(this)"} Accessibility Settings
+
+%div{id: "accessibilityp"}
+  %p Font Size:
+  %input#smallb{onclick: "SetFontSize('90%')", type: "button", value: "Small"}
+  %input#mediumb{onclick: "SetFontSize('105%')", type: "button", value: "Medium"}
+  %input#largeb{onclick: "SetFontSize('125%')", type: "button", value: "Large"}
+  %p Colour Scheme:
+  %input#normalb{onclick: "SetPageStyle('Normal')", type: "button", value: "Normal Mode"}
+  %input#darkb{onclick: "SetPageStyle('Dark')", type: "button", value: "Dark Mode"}
