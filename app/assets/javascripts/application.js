@@ -45,14 +45,66 @@ function ValidateLocationForm(){
       'location[name]': {required: true},
       'location[country]': {required: true},
       'location[street]': {required: true},
-      'location[postcode]': {required: true},
-
+      'location[postcode]': {required: true}
     },
     messages: {
       'location[name]': {required: "You must provide the location name"},
       'location[country]': {required: "You must provide a country"},
       'location[street]': {required: "You must provide a street name"},
-      'location[postcode]': {required: "You must provide a postcode"},
+      'location[postcode]': {required: "You must provide a postcode"}
+    }
+  });
+}
+
+function ValidateEventForm(){
+  $('#EventForm').validate({
+    rules: {
+      'event[name]': {required: true}
+    },
+    messages: {
+      'event[name]': {required: "You must provide an event name"}
+    }
+  });
+}
+
+function ValidateReviewForm(){
+  $('#ReviewForm').validate({
+    rules: {
+      'review[rating]': {
+        required: true,
+        digits: true,
+        range: [1, 5],
+      }
+    },
+    messages: {
+      'review[rating]': {
+        required: "You must provide a rating out of 5",
+        digits: "rating must be a whole number out of 5",
+        range: "rating must be between 1 and 5"
+      }
+    }
+  });
+}
+
+function ValidateTicketForm(){
+  $('#TicketForm').validate({
+    rules: {
+      'ticket[first_name]': {required: true},
+      'ticket[last_name]': {required: true},
+      'ticket[age]': {
+        required: true,
+        digits: true,
+        range: [0, 150],
+      }
+    },
+    messages: {
+      'ticket[first_name]': {required: "You must provide a first name"},
+      'ticket[last_name]': {required: "You must provide a second name"},
+      'ticket[age]': {
+        required: "You must provide an age",
+        digits: "age must be a whole number",
+        range: "rating must be between 0 and 150"
+      }
     }
   });
 }
@@ -67,6 +119,17 @@ $(document).ready(function() {
     ValidateLocationForm();
   }
 
+  if(document.getElementById('EventForm')){
+    ValidateEventForm();
+  }
+
+  if(document.getElementById('ReviewForm')){
+    ValidateReviewForm();
+  }
+
+  if(document.getElementById('TicketForm')){
+    ValidateTicketForm();
+  }
 
   $('[data-js-hide-link]').click(function(event){
     $(this).parents('li').hide();
