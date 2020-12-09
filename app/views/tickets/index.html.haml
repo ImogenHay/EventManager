@@ -1,5 +1,7 @@
 %h1 Listing tickets
 
+
+
 %table
   %thead
     %tr
@@ -21,6 +23,9 @@
         %td= link_to 'Show', ticket
         %td= link_to 'Edit', edit_ticket_path(ticket)
         %td= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to "Hide", "", class: 'hide', data: {'js-hide-link' => true}
+
+
 
 %br
 

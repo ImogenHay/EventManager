@@ -1,2 +1,11 @@
-%h1=  t('.title')  #title and description of home page, defined in en.yml
-%p= t('.description')
+%h1{id: "welcome_id"}=  t('.title')  #title and description of home page, defined in en.yml
+%p{id: "description_id"}= t('.description')
+
+%h2{id: "current", onclick: "ToggleText(this)"} Current Events
+%p{id: "currentp"} See current events here!
+
+%h2{id: "venues", onclick: "ToggleText(this)"} Venues
+%p{id: "venuesp"} View different venues and add your own events here!
+
+%h2{id: "accounts", onclick: "ToggleText(this)"} Accounts
+%p{id: "accountsp"} Sign up for an ImmyEvents account to book tickets and leave reviews!
