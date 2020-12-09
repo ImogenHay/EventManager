@@ -44,21 +44,22 @@ div {
 }
 
 #notice {
-  color: green;
+  color: MistyRose;
 }
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: #3D5B59;
   display: table;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid #3D5B59;
   padding: 7px 7px 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: MistyRose;
+  color: rgb(53, 54, 67);
 
   h2 {
     text-align: left;
@@ -66,8 +67,8 @@ div {
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
+    background-color: #3D5B59;
+    color: MistyRose;
   }
 
   ul li {
