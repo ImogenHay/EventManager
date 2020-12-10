@@ -22,6 +22,14 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_select 'p', 'Complete the following form to get in touch with us.'
   end
 
+  test "should get about" do
+    get about_url
+    assert_response :success
+
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'About Us'
+  end
+
   test "should post request contact but no email" do
     post request_contact_url
     assert_response :redirect
