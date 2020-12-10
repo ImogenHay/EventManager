@@ -36,11 +36,12 @@
         %td{:class => "#{row_class} plain"}= link_to 'Show', event
         %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_event_path(event)
         %td{:class => "#{row_class} plain"}= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+        
 
 %br
 
 = link_to 'New Event', locations_path
-
+%p
 %h4 Table Styles:
 %input#plainb{onclick: "SetTableStyle('Plain')", type: "button", value: "Plain"}
 %input#brightb{onclick: "SetTableStyle('Bright')", type: "button", value: "Bright"}

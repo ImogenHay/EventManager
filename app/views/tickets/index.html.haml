@@ -14,19 +14,28 @@
       %th
 
   %tbody
-    - @tickets.each do |ticket|
+    - @tickets.each_with_index do |ticket, i|
+      - row_class = ""
+      - if i % 2 == 0
+        - row_class = "even"
+      - else
+        - row_class = "odd"
       %tr
-        %td= ticket.event.name
-        %td= ticket.first_name
-        %td= ticket.last_name
-        %td= ticket.age
-        %td= link_to 'Show', ticket
-        %td= link_to 'Edit', edit_ticket_path(ticket)
-        %td= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }
-        %td= link_to "Hide", "", class: 'hide', data: {'js-hide-link' => true}
+        %td{:class => "#{row_class} plain"}= ticket.event.name
+        %td{:class => "#{row_class} plain"}= ticket.first_name
+        %td{:class => "#{row_class} plain"}= ticket.last_name
+        %td{:class => "#{row_class} plain"}= ticket.age
+        %td{:class => "#{row_class} plain"}= link_to 'Show', ticket
+        %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_ticket_path(ticket)
+        %td{:class => "#{row_class} plain"}= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }
+        %td{:class => "#{row_class} plain"}= link_to "Hide", "", class: 'hide', data: {'js-hide-link' => true}
 
 
 
 %br
 
 = link_to 'Book Tickets', events_path
+%p
+%h4 Table Styles:
+%input#plainb{onclick: "SetTableStyle('Plain')", type: "button", value: "Plain"}
+%input#brightb{onclick: "SetTableStyle('Bright')", type: "button", value: "Bright"}

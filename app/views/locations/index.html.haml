@@ -13,17 +13,26 @@
       %th
 
   %tbody
-    - @locations.each do |location|
+    - @locations.each_with_index do |location, i|
+      - row_class = ""
+      - if i % 2 == 0
+        - row_class = "even"
+      - else
+        - row_class = "odd"
       %tr
-        %td= location.name
-        %td= location.description
-        %td= location.country
-        %td= location.street
-        %td= location.postcode
-        %td= link_to 'Show', location
-        %td= link_to 'Edit', edit_location_path(location)
-        %td= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
+        %td{:class => "#{row_class} plain"}= location.name
+        %td{:class => "#{row_class} plain"}= location.description
+        %td{:class => "#{row_class} plain"}= location.country
+        %td{:class => "#{row_class} plain"}= location.street
+        %td{:class => "#{row_class} plain"}= location.postcode
+        %td{:class => "#{row_class} plain"}= link_to 'Show', location
+        %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_location_path(location)
+        %td{:class => "#{row_class} plain"}= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
 = link_to 'New Location', new_location_path
+%p
+%h4 Table Styles:
+%input#plainb{onclick: "SetTableStyle('Plain')", type: "button", value: "Plain"}
+%input#brightb{onclick: "SetTableStyle('Bright')", type: "button", value: "Bright"}
