@@ -33,9 +33,26 @@
    color: $text_color;
  }
 
- td, th {
+ td, th { /* padding for index of models */
    padding: 5px;
  }
+
+ td.odd.plain{
+    background-color: rgb(200, 166, 163);
+ }
+
+ td.even.plain{
+    background-color: rgb(253, 211, 206);
+ }
+
+ td.odd.bright{
+    background-color: MediumAquaMarine;
+ }
+
+ td.even.bright{
+    background-color: rgb(159, 224, 202);
+ }
+
 
  /* The sidebar menu */
  .sidebar {
@@ -89,14 +106,14 @@
    background-color: #444;
  }
 
- /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+ /* Style page content -push the page content to the right when you open the side navigation */
  #main {
-   transition: margin-left .5s; /* If you want a transition effect */
+   transition: margin-left .5s; /* transition effect of sidebar*/
    padding: 20px;
  }
 
  #main_content {
-   transition: margin-left .5s; /* If you want a transition effect */
+   transition: margin-left .5s; /* transition effect of page contents */
    padding: 20px;
  }
 

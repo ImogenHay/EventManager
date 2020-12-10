@@ -26,9 +26,6 @@ function openNav() {
   document.getElementById("main_content").style.marginLeft = "250px";
   document.body.style.backgroundColor = "rgb(120, 81, 77)";
   document.body.style.color = "rgb(82, 72, 71)"
-  document.h1.style.color = "rgb(82, 72, 71)"
-
-
 }
 
 /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
@@ -56,6 +53,17 @@ function SetPageStyle(val){
   else{
     $("*").each(function(i,e){e.style.background = "rgb(53, 54, 67)"});
     $("*").each(function(i,e){e.style.color = "salmon"});
+  }
+}
+
+function SetTableStyle(sty){
+  if(sty === 'Plain'){
+    $("td").removeClass("bright")
+    $("td").addClass("plain")
+  }
+  else {
+    $("td").removeClass("plain")
+    $("td").addClass("bright")
   }
 }
 
@@ -151,8 +159,4 @@ $(document).ready(function() {
     ValidateTicketForm();
   }
 
-  $('[data-js-hide-link]').click(function(event){
-    $(this).parents('li').hide();
-    event.preventDefault();
-  });
 });

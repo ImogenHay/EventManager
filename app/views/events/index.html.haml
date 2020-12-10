@@ -1,4 +1,4 @@
-%h1 Listing events
+%h1 Events
 
 %table
   %thead
@@ -17,21 +17,30 @@
       %th
 
   %tbody
-    - @events.each do |event|
+    - @events.each_with_index do |event, i|
+      - row_class = ""
+      - if i % 2 == 0
+        - row_class = "even"
+      - else
+        - row_class = "odd"
       %tr
-        %td= event.name
-        %td= event.location.name
-        %td= event.event_type
-        %td= event.date
-        %td= event.description
-        %td= event.start
-        %td= event.end
-        %td= event.num_tickets
-        %td= event.price
-        %td= link_to 'Show', event
-        %td= link_to 'Edit', edit_event_path(event)
-        %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+        %td{:class => "#{row_class} plain"}= event.name
+        %td{:class => "#{row_class} plain"}= event.location.name
+        %td{:class => "#{row_class} plain"}= event.event_type
+        %td{:class => "#{row_class} plain"}= event.date
+        %td{:class => "#{row_class} plain"}= event.description
+        %td{:class => "#{row_class} plain"}= event.start
+        %td{:class => "#{row_class} plain"}= event.end
+        %td{:class => "#{row_class} plain"}= event.num_tickets
+        %td{:class => "#{row_class} plain"}= event.price
+        %td{:class => "#{row_class} plain"}= link_to 'Show', event
+        %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_event_path(event)
+        %td{:class => "#{row_class} plain"}= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Event', new_event_path
+= link_to 'New Event', locations_path
+
+%h4 Table Styles:
+%input#plainb{onclick: "SetTableStyle('Plain')", type: "button", value: "Plain"}
+%input#brightb{onclick: "SetTableStyle('Bright')", type: "button", value: "Bright"}
