@@ -1,29 +1,46 @@
+%link{href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet"}/
+
 #mySidebar.sidebar
   %a.closebtn{href: "javascript:void(0)", onclick: "closeNav()"} ×
-  %a{href: "/"} Home
-  %a{href: "#"} About Us
-  %a{href: "/events"} Events
-  %a{href: "/locations"} Venues
-  %a{href: "#"} Resources
-  %a{href: "/contact"} Contact Us
+  %a{href: "/"}
+    %i.fa.fa-fw.fa-home
+    Home
+  %a{href: "#"}
+    %i.fa.fa-fw.fa-info-circle
+    About Us
+  %a{href: "/events"}
+    %i.fa.fa-fw.fa-star
+    Events
+  %a{href: "/locations"}
+    %i.fa.fa-fw.fa-globe
+    Venues
+  %a{href: "#"}
+    %i.fa.fa-fw.fa-search
+    Resources
+  %a{href: "/contact"}
+    %i.fa.fa-fw.fa-envelope
+    Contact Us
 #main
   %nav
-    - if user_signed_in?
-      = "#{current_user.email} |"
-      = link_to t('profile'), edit_user_registration_path
-      = '|'
-      = link_to t('logout'), destroy_user_session_path, method: 'delete'
-    - else
-      = link_to t('login'), new_user_session_path
-      = '|'
-      = link_to t('sign_up'), new_user_registration_path
-      
+    %header
+      %h3
+        = t('.header')
+        %i.fa.fa-fw.fa-user
+        - if user_signed_in?
+          = "#{current_user.email} |"
+          = link_to t('profile'), edit_user_registration_path
+          = '|'
+          = link_to t('logout'), destroy_user_session_path, method: 'delete'
+        - else
+          = link_to t('login'), new_user_session_path
+          = '|'
+          = link_to t('sign_up'), new_user_registration_path
+
   %p
   %button.openbtn{onclick: "openNav()"} ☰ Open Sidebar
 
 
-  %header
-    %h3= t('.header')
+
 
   - flash.each do |key, value|
     = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?

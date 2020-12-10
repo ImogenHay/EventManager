@@ -24,6 +24,10 @@ function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
   document.getElementById("main_content").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgb(120, 81, 77)";
+  document.body.style.color = "rgb(82, 72, 71)"
+  document.h1.style.color = "rgb(82, 72, 71)"
+
 
 }
 
@@ -32,6 +36,8 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
   document.getElementById("main_content").style.marginLeft = "0";
+  document.body.style.backgroundColor = "salmon";
+  document.body.style.color = "rgb(53, 54, 67)"
 }
 
 function ToggleText(elem){
