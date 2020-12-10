@@ -56,6 +56,14 @@ en:
       no_email: You must supply an email address
       email_sent: Thank you. We will be in touch shortly.
 
+    about:
+      title: About Us
+      description: We are a small startup website hosting an event manager for you to list your events or venues and to
+        allow users to book tickets and leave reviews. This site was started in 2020 but is improving everyday.
+      contact: Contact us to tell us how we can improve using the sidebar!
+      creator: Creator - Imogen Hay
+
+
   shared: #in shared view
     header: #in header file
       header: ImmyEvents

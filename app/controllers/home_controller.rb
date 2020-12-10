@@ -5,6 +5,9 @@ class HomeController < ApplicationController
   def contact
   end
 
+  def about
+  end
+
   def request_contact #method called when submit button pressed
     name = params[:name]
     email = params[:email] #form values available via params hash
