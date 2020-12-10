@@ -40,7 +40,7 @@ en:
 
     contact: #in contact html file
       title: Contact Us
-      contact_us: Complete the following form to get in touch with us.
+      description: Complete the following form to get in touch with us.
 
       name: "Name:" #strings for contact form
       enter_name: Enter your name
@@ -62,6 +62,11 @@ en:
         allow users to book tickets and leave reviews. This site was started in 2020 but is improving everyday.
       contact: Contact us to tell us how we can improve using the sidebar!
       creator: Creator - Imogen Hay
+
+  resources:
+    resources:
+      title: Resources Page
+
 
 
   shared: #in shared view

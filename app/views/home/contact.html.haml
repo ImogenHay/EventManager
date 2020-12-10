@@ -1,5 +1,5 @@
 %h1= t('.title')
-%p= t('.contact_us')
+%h4= t('.description')
 
 = form_tag request_contact_path, method: 'post' do                       #path is where form will be submitted, RESTful method
   = label_tag :name, t('.name')                                          #label tag for field with name

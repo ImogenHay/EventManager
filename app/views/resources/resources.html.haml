@@ -1,0 +1,87 @@
+%h1=  t('.title')  #title and description of resources page, defined in en.yml
+
+
+%h2{id: "locations", onclick: "ToggleText(this)"} Venues:
+%div{id: "locationsp"}
+  = link_to 'Venues Page', locations_path
+  %br= link_to 'Add Venue', new_location_path
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Description
+        %th Country
+        %th Street
+        %th Postcode
+        %th
+        %th
+        %th
+
+    %tbody
+      - @locations.each_with_index do |location, i|
+        - row_class = ""
+        - if i % 2 == 0
+          - row_class = "even"
+        - else
+          - row_class = "odd"
+        %tr
+          %td{:class => "#{row_class} plain"}= location.name
+          %td{:class => "#{row_class} plain"}= location.description
+          %td{:class => "#{row_class} plain"}= location.country
+          %td{:class => "#{row_class} plain"}= location.street
+          %td{:class => "#{row_class} plain"}= location.postcode
+          %td{:class => "#{row_class} plain"}= link_to 'Show', location
+          %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_location_path(location)
+          %td{:class => "#{row_class} plain"}= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
+
+%h2{id: "events", onclick: "ToggleText(this)"} Current Events:
+%div{id: "eventsp"}
+  = link_to 'Events Page', events_path
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Location
+        %th Type
+        %th Date
+        %th Description
+        %th Start
+        %th End
+        %th Tickets
+        %th Price
+        %th
+        %th
+        %th
+
+    %tbody
+      - @events.each_with_index do |event, i|
+        - row_class = ""
+        - if i % 2 == 0
+          - row_class = "even"
+        - else
+          - row_class = "odd"
+        %tr
+          %td{:class => "#{row_class} plain"}= event.name
+          %td{:class => "#{row_class} plain"}= event.location.name
+          %td{:class => "#{row_class} plain"}= event.event_type
+          %td{:class => "#{row_class} plain"}= event.date
+          %td{:class => "#{row_class} plain"}= event.description
+          %td{:class => "#{row_class} plain"}= event.start
+          %td{:class => "#{row_class} plain"}= event.end
+          %td{:class => "#{row_class} plain"}= event.num_tickets
+          %td{:class => "#{row_class} plain"}= event.price
+          %td{:class => "#{row_class} plain"}= link_to 'Show', event
+          %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_event_path(event)
+          %td{:class => "#{row_class} plain"}= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+
+%h2{id: "reviews", onclick: "ToggleText(this)"} Your Reviews:
+%div{id: "reviewsp"}
+  = link_to 'View Your Reviews', reviews_path
+
+%h2{id: "tickets", onclick: "ToggleText(this)"} Your Tickets:
+%div{id: "ticketsp"}
+  = link_to 'View Your Tickets', tickets_path
+
+%br

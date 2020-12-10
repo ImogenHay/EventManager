@@ -10,7 +10,11 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
     assert_select 'title', 'ImmyEvents'
     assert_select 'h1', 'Welcome to ImmyEvents - Event Manager'
-    assert_select 'p', 'Find and Book Events Here!'
+    assert_select 'h2', 'Current Events'
+    assert_select 'h2', 'Venues'
+    assert_select 'h2', 'Accounts'
+    assert_select 'h2', 'Accessibility Settings'
+
   end
 
   test "should get contact" do
@@ -19,7 +23,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_template layout: 'application'
     assert_select 'title', 'ImmyEvents'
     assert_select 'h1', 'Contact Us'
-    assert_select 'p', 'Complete the following form to get in touch with us.'
+    assert_select 'h4', 'Complete the following form to get in touch with us.'
   end
 
   test "should get about" do
