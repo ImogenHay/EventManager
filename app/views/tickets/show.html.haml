@@ -21,6 +21,10 @@
 %p
   %b Age:
   = @ticket.age
+  - if @ticket.age < 18
+    ='(child)'
+  - else
+    ='(adult)'
 
 = link_to 'Edit', edit_ticket_path(@ticket)
 \|

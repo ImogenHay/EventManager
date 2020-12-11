@@ -24,7 +24,11 @@
         %td{:class => "#{row_class} plain"}= ticket.event.name
         %td{:class => "#{row_class} plain"}= ticket.first_name
         %td{:class => "#{row_class} plain"}= ticket.last_name
-        %td{:class => "#{row_class} plain"}= ticket.age
+        %td{:class => "#{row_class} plain"}
+          - if ticket.age < 18
+            ='Child'
+          - else
+            ='Adult'
         %td{:class => "#{row_class} plain"}= link_to 'Show', ticket
         %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_ticket_path(ticket)
         %td{:class => "#{row_class} plain"}= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }
