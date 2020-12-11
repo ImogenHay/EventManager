@@ -37,6 +37,7 @@ function closeNav() {
   document.body.style.color = "rgb(53, 54, 67)"
 }
 
+
 function ToggleText(elem){
   $('#'+elem.id+"p").toggle();
 }

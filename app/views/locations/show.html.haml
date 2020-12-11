@@ -43,8 +43,9 @@
         - row_class = "odd"
       %tr{id: "review_#{review.id}"}
         %td{:class => "#{row_class} plain"}= review.user.email
-        %td{:class => "#{row_class} plain"}= review.rating
-        %td{:class => "#{row_class} plain"}='Star'
+        %td{:class => "#{row_class} plain"}
+          - (1..review.rating).each do |i|
+            %i.fa.fa-fw.fa-star
         - if review.user == current_user
           %td{:class => "#{row_class} plain"}= link_to 'Show', review
           %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_review_path(review)

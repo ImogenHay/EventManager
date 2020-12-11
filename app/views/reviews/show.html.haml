@@ -8,6 +8,8 @@
   = @review.description
 %p
   %b Rating:
+  - (1..@review.rating).each do |i|
+    %i.fa.fa-fw.fa-star
   = @review.rating
 
 = link_to 'Edit', edit_review_path(@review)
