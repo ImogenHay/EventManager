@@ -1,6 +1,6 @@
 class ResourcesController < ApplicationController
   def resources
-    @locations = Location.all
-    @events = Event.all
+    @locations = Location.order('name asc')
+    @events = Event.order('date asc')
   end
 end

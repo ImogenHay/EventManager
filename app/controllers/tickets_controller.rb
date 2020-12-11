@@ -5,7 +5,7 @@ class TicketsController < ApplicationController
   # GET /tickets
   # GET /tickets.json
   def index
-    @tickets = Ticket.user_tickets(current_user) #scope uses devise current user object to restrict search
+    @tickets = Ticket.user_tickets(current_user).order('age desc') #scope uses devise current user object to restrict search
   end
 
   # GET /tickets/1
