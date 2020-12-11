@@ -37,7 +37,7 @@
           = event.price
         %td{:class => "#{row_class} plain"}= link_to 'Show', event
         %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_event_path(event)
-        %td{:class => "#{row_class} plain"}= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+        %td{:class => "#{row_class} plain"}= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure? This will remove all associated tickets!' }
 
 
 %br

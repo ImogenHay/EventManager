@@ -138,6 +138,21 @@ function ValidateTicketForm(){
   });
 }
 
+function ValidateContactForm(){
+  $('#ContactForm').validate({
+    rules: {
+      'name': {required: true},
+      'email': {required: true, email: true},
+      'message': {required: true},
+    },
+    messages: {
+      'name': {required: "Must provide name"},
+      'email': {required: "Must provide email", email: "Must be valid email"},
+      'message': {required: "Must provide message"},
+    }
+  });
+}
+
 $(document).ready(function() {
 
   if(document.getElementById('welcome_id')){
@@ -159,5 +174,6 @@ $(document).ready(function() {
   if(document.getElementById('TicketForm')){
     ValidateTicketForm();
   }
+
 
 });

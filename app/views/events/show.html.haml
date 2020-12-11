@@ -44,7 +44,7 @@
           %td{:class => "#{row_class} plain"}= ticket.last_name
           %td{:class => "#{row_class} plain"}= link_to 'Show', ticket
           %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_ticket_path(ticket)
-          %td{:class => "#{row_class} plain"}= link_to 'Destroy', ticket, :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true
+          %td{:class => "#{row_class} plain"}= link_to 'Destroy', ticket, :method => :delete, :data => { :confirm => 'Are you sure? This will remove all associated tickets!' }, :remote => true
 
 %p= link_to 'Book Ticket', new_ticket_path(event_id: @event)
 

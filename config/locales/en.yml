@@ -53,7 +53,7 @@ en:
       submit: Contact Us
 
     request_contact: #when contact form submitted
-      no_email: You must supply an email address
+      required: You must supply an email address, name and message.
       email_sent: Thank you. We will be in touch shortly.
 
     about:

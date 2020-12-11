@@ -1,7 +1,7 @@
 %h1= t('.title')
 %h4= t('.description')
 
-= form_tag request_contact_path, method: 'post' do                       #path is where form will be submitted, RESTful method
+= form_tag request_contact_path, method: 'post', :id => 'ContactForm' do   #path is where form will be submitted, RESTful method
   = label_tag :name, t('.name')                                          #label tag for field with name
   = text_field_tag :name, '', title: t('.enter_name'), size: 50          #form field of particular type
   = label_tag :email, t('.email')
@@ -10,4 +10,4 @@
   = telephone_field_tag :telephone, '', title: t('.enter_telephone')
   = label_tag :message, t('.message')
   = text_field_tag :message, '', title: t('.enter_message'), size: 100
-  = submit_tag t('.submit')                                             #submit button for form
+  = button_tag t('.submit'), onclick: "ValidateContactForm()"                                           #submit button for form

@@ -34,10 +34,8 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_select 'h1', 'About Us'
   end
 
-  test "should post request contact but no email" do
+  test "should post request contact but not valid" do
     post request_contact_url
-    assert_response :redirect
-    assert_not_empty flash[:alert]
     assert_nil flash[:notice]
   end
 

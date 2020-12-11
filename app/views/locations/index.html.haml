@@ -27,7 +27,7 @@
         %td{:class => "#{row_class} plain"}= location.postcode
         %td{:class => "#{row_class} plain"}= link_to 'Show', location
         %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_location_path(location)
-        %td{:class => "#{row_class} plain"}= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }
+        %td{:class => "#{row_class} plain"}= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure? This will remove all associated reviews and events!' }
 
 %br
 
