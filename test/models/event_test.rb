@@ -20,7 +20,9 @@ class EventTest < ActiveSupport::TestCase
 
     event.name = 'Name'
     event.location = @location #set the event's location to be the fixture referenced during “setup”
-    event.date = '01/06/2020'
+    event.date = Time.zone.today
+    event.start = '2020-11-23 17:37:35'
+    event.end = '2020-11-23 17:37:35'
 
     event.save
     assert event.valid?

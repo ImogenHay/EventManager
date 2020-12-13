@@ -4,10 +4,10 @@ one:
   name: MyString
   location: one
   event_type: Type
-  date: 2020-11-23
+  date: <%= Time.zone.today %>
   description: MyText
   start: 2020-11-23 17:37:35
-  end: 2020-11-23 17:37:35
+  end: 2020-11-23 19:37:36
   num_tickets: 1
   price: 9.99
 
@@ -15,9 +15,9 @@ two:
   name: MyString
   location: two
   event_type: Type
-  date: 2020-11-23
+  date: <%= Time.zone.today %>
   description: MyText
   start: 2020-11-23 17:37:35
-  end: 2020-11-23 17:37:35
+  end: 2020-11-23 19:37:36
   num_tickets: 1
   price: 9.99

@@ -17,10 +17,10 @@
   = @event.description
 %p
   %b Start:
-  = @event.start
+  = @event.start.strftime("%I:%M%p")
 %p
   %b End:
-  = @event.end
+  = @event.end.strftime("%I:%M%p")
 %p
   %b Tickets Available:
   = @event.num_tickets

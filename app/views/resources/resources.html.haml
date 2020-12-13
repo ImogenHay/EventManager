@@ -66,8 +66,8 @@
           %td{:class => "#{row_class} plain"}= event.event_type
           %td{:class => "#{row_class} plain"}= event.date
           %td{:class => "#{row_class} plain"}= event.description
-          %td{:class => "#{row_class} plain"}= event.start
-          %td{:class => "#{row_class} plain"}= event.end
+          %td{:class => "#{row_class} plain"}= event.start.strftime("%I:%M%p")
+          %td{:class => "#{row_class} plain"}= event.end.strftime("%I:%M%p")
           %td{:class => "#{row_class} plain"}= event.num_tickets
           %td{:class => "#{row_class} plain"}
             = '£'
