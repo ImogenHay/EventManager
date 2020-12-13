@@ -1,0 +1,13 @@
+
+$(document).ready(function() { //call when DOM loaded
+  var eventSource = new EventSource(
+"<%= Rails.application.routes.url_helpers.events_path %>"); //get path to streamed data
+  $(eventSource).bind("currentdate", function(event) {
+    var data = $.parseJSON(event.originalEvent.data); //parse data from JS object not jQuery
+    $('#currentdate').html(data.value); //update date display in span
+  } );
+});
+
+function get_reading() { //uses ActionCable to execute "currentdate" method on the channel
+  App.socket.currentdate();
+}
