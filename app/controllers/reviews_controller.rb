@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.user_reviews(current_user).order('rating asc') #scope uses devise current user object to restrict search
+    @reviews = Review.user_reviews(current_user).ordered #scope uses devise current user object to restrict search
   end
 
   # GET /reviews/1

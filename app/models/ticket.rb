@@ -6,4 +6,5 @@ class Ticket < ApplicationRecord
   validates :first_name, :last_name, length: { maximum: 255, too_long: "can be a maximum of %{count} characters" }, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
 
   scope :user_tickets, ->(user) { where(['user_id = ?', user.id]) } #finds all notes where user_id same as passed in user objects id
+  scope :ordered, -> {order('age desc')}
 end

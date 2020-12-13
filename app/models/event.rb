@@ -6,6 +6,10 @@ class Event < ApplicationRecord
   validates :name, length: { maximum: 255, too_long: "can be a maximum of %{count} characters" }
   validate :date_is_possible?
 
+  scope :finished, ->(user) { where(['user_id = ?', user.id]) }
+  scope :ordered, -> {order('date asc')}
+  scope :indate, -> {where('date > ?', Time.zone.today - 3.days)}
+
   def date_is_possible?
     return if date.blank?
     if date < Time.zone.today

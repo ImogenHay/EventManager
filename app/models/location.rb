@@ -5,4 +5,6 @@ class Location < ApplicationRecord
   validates :name, :country, :street, :postcode, presence: true
   validates :name, uniqueness: true, length: { maximum: 255, too_long: "can be a maximum of %{count} characters" }
   validates :country, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters" }
+
+  scope :ordered, -> {order('name asc')}
 end
