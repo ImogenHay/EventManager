@@ -1,7 +1,9 @@
 = form_for @location, :html => {:id => "LocationForm"} do |f|
   - if @location.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@location.errors.count, "error")} prohibited this location from being saved:"
+      %h2
+        = "#{pluralize(@location.errors.count, "error")}"
+        = I18n.t('.error')
       %ul
         - @location.errors.full_messages.each do |message|
           %li= message
@@ -22,4 +24,4 @@
     = f.label :postcode
     = f.text_field :postcode
   .actions
-    = f.submit 'Save'
+    = f.submit I18n.t('.save')

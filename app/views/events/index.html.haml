@@ -1,17 +1,17 @@
-%h1 Events
+%h1= I18n.t('.eventtitle')
 
 %table
   %thead
     %tr
-      %th Name
-      %th Location
-      %th Type
-      %th Date
-      %th Description
-      %th Start
-      %th End
-      %th Tickets
-      %th Price
+      %th= t('.name')
+      %th= t('.location')
+      %th= t('.type')
+      %th= t('.date')
+      %th= t('.description')
+      %th= t('.start')
+      %th= t('.end')
+      %th= t('.tickets')
+      %th= t('.price')
       %th
       %th
       %th
@@ -35,15 +35,15 @@
         %td{:class => "#{row_class} plain"}
           = '£'
           = event.price
-        %td{:class => "#{row_class} plain"}= link_to 'Show', event
-        %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_event_path(event)
-        %td{:class => "#{row_class} plain"}= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure? This will remove all associated tickets!' }
+        %td{:class => "#{row_class} plain"}= link_to t('.show'), event
+        %td{:class => "#{row_class} plain"}= link_to t('.edit'), edit_event_path(event)
+        %td{:class => "#{row_class} plain"}= link_to t('.destroy'), event, method: :delete, data: { confirm: I18n.t('.confirm') }
 
 
 %br
 
-= link_to 'New Event', locations_path
+= link_to I18n.t('.eventnew'), locations_path
 %p
-%h4 Table Styles:
-%input#plainb{onclick: "SetTableStyle('Plain')", type: "button", value: "Plain"}
-%input#brightb{onclick: "SetTableStyle('Bright')", type: "button", value: "Bright"}
+%h4= I18n.t('.styles')
+%input#plainb{onclick: "SetTableStyle(t('.plain'))", type: "button", value: "Plain"}
+%input#brightb{onclick: "SetTableStyle(t('.bright'))", type: "button", value: "Bright"}

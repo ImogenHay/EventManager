@@ -1,21 +1,21 @@
 
 %p
-  %b Name:
+  %b= t('.name')
   = @location.name
 %p
-  %b Description:
+  %b= t('.description')
   = @location.description
 %p
-  %b Country:
+  %b= t('.country')
   = @location.country
 %p
-  %b Street:
+  %b= t('.street')
   = @location.street
 %p
-  %b Postcode:
+  %b= t('.postcode')
   = @location.postcode
 
-%b Events:
+%b= t('.events')
 %table
   %tbody
     - @location.events.each_with_index do |event, i|
@@ -26,13 +26,13 @@
         - row_class = "odd"
       %tr{id: "event_#{event.id}"}
         %td{:class => "#{row_class} plain"}= event.name
-        %td{:class => "#{row_class} plain"}= link_to 'Show', event
-        %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_event_path(event)
-        %td{:class => "#{row_class} plain"}= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure? This will remove all associated reviews and events!' }, :remote => true
+        %td{:class => "#{row_class} plain"}= link_to t('.show'), event
+        %td{:class => "#{row_class} plain"}= link_to t('.edit'), edit_event_path(event)
+        %td{:class => "#{row_class} plain"}= link_to t('.destroy'), event, :method => :delete, :data => { :confirm => 'Are you sure? This will remove all associated reviews and events!' }, :remote => true
 
 %p= link_to t('.add_event'), new_event_path(location_id: @location)
 
-%b Reviews:
+%b= t('.reviews')
 %table
   %tbody
     - @location.reviews.each_with_index do |review, i|
@@ -47,9 +47,9 @@
           - (1..review.rating).each do |i|
             %i.fa.fa-fw.fa-star
         - if review.user == current_user
-          %td{:class => "#{row_class} plain"}= link_to 'Show', review
-          %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_review_path(review)
-          %td{:class => "#{row_class} plain"}= link_to 'Destroy', review, :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true
+          %td{:class => "#{row_class} plain"}= link_to t('.show'), review
+          %td{:class => "#{row_class} plain"}= link_to t('.edit'), edit_review_path(review)
+          %td{:class => "#{row_class} plain"}= link_to t('.destroy'), review, :method => :delete, :data => { :confirm => 'Are you sure?' }, :remote => true
         - else
           %td{:class => "#{row_class} plain"}
           %td{:class => "#{row_class} plain"}

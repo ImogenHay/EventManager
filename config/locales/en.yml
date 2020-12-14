@@ -32,11 +32,86 @@
 en:
   app_title: ImmyEvents
   app_description: An event manager for you!
+  error: "prohibited this from being saved:"
+  confirm: Are you sure? This will remove all associated models!
+  edit: Edit
+  back: Back
+  show: Show
+  destroy: Destroy
+  save: Save
+  plain: Plain
+  bright: Bright
+  styles: "Table Styles:"
+
+  eventtitle: Events
+  eventnew: New Event
+  eventedit: Editing Event
+  eventcreate: Creating Event
+
+  locationtitle: Venues
+  locationnew: New Location
+  locationedit: Editing Location
+  locationcreate: Adding Venue
+
+  reviewtitle: Your Reviews
+  reviewnew: Leave Reviews
+  reviewedit: Editing Review
+  reviewcreate: Leave Your Review
+
+  tickettitle: Your Tickets
+  ticketnew: Book Tickets
+  ticketedit: Editing Ticket
+  ticketcreate: Book Your Ticket
+
+
+
+  resources:
+    resources:
+      title: Resources Page
+      events: Current Events
+      pevents: Events Page
+      pvenues: Venues Page
+      avenues: Add Venue
+      vreviews: View Your Reviews
+      vtickets: View Your Tickets
+
+      ename: Name
+      location: Location
+      type: Type
+      date: Date
+      edescription: Desription
+      start: Start
+      end: End
+      price: Price
+      tickets: Tickets
+
+      lname: Name
+      ldescription: Description
+      country: Country
+      street: Street
+      postcode: Postcode
+
+
 
   home: #in home view
     home: #in home html file
       title: Welcome to ImmyEvents - Event Manager
       description: Find and Book Events Here!
+      current: Current Events
+      currentp: See current events and add you own using the sidebar. You can then book tickets.
+      venues: Venues
+      venuesp: View available venues and their events or add your own using the sidebar.
+      accounts: Accounts
+      accountsp: Sign up for an ImmyEvents account to book tickets and leave reviews! (See top of screen)
+      accessibility: Accessibility Settings
+      font: "Font Size:"
+      small: Small
+      medium: Medium
+      large: Large
+      colour: "Colour Scheme:"
+      light: Light Mode
+      dark: Dark Mode
+
 
     contact: #in contact html file
       title: Contact Us
@@ -52,9 +127,11 @@ en:
       enter_message: What do you want to say?
       submit: Contact Us
 
+
     request_contact: #when contact form submitted
       required: You must supply an email address, name and message.
       email_sent: Thank you. We will be in touch shortly.
+
 
     about:
       title: About Us
@@ -63,22 +140,76 @@ en:
       contact: Contact us to tell us how we can improve using the sidebar!
       creator: Creator - Imogen Hay
 
-  resources:
-    resources:
-      title: Resources Page
-
 
 
   shared: #in shared view
     header: #in header file
       header: ImmyEvents
+      home: Home
+      about: About Us
+      events: Events
+      venues: Venues
+      resources: Resources
+      contact: Contact Us
+      open: "☰ Open Sidebar"
     footer: #in footer file
       copyright: "&copy;"
       footer: ImmyEvents - Event manager for you
+      button: Current Date/Time
+      date: "The current date is:"
+
+
 
   locations: #in locations view
+    name: "Name:"
+    description: "Description:"
+    country: "Country:"
+    street: "Street:"
+    postcode: "Postcode:"
     show: #in show file
       add_event: Add Event
       add_review: Leave Review
-      edit: Edit
-      back: Back
+      events: "Events:"
+      reviews: "Reviews:"
+
+
+
+    events:
+      name: "Name:"
+      location: "Location:"
+      type: "Type:"
+      date: "Date:"
+      description: "Desription:"
+      start: "Start:"
+      end: "End:"
+      price: "Price:"
+      show:
+        ytickets: "Your Tickets:"
+        tickets: "Tickets Available:"
+        book_ticket: Book Ticket
+      index:
+        tickets: "Tickets:"
+
+
+
+    reviews:
+      location: "Location:"
+      description: "Description:"
+      rating: "Rating:"
+
+
+
+    tickets:
+      event: "Event:"
+      fname: "First Name:"
+      lname: "Last Name:"
+      age: "Age:"
+      show:
+        location: "Location:"
+        date: "Date:"
+        start: "Start:"
+        child: (child)
+        adult: (adult)
+      index:
+        child: Child
+        adult: Adult

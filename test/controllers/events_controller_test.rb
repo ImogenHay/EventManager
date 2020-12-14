@@ -36,7 +36,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     get event_url(@event)
     assert_response :success
     assert_select 'title', 'ImmyEvents'
-    assert_select 'b', 'Your Tickets:'
+    assert_select 'b', 'Your Tickets'
   end
 
   test "should get edit" do

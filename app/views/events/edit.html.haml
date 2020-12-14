@@ -1,7 +1,7 @@
-%h1 Editing Event
+%h1= I18n.t('.eventedit')
 
 = render 'form'
 
-= link_to 'Show', @event
+= link_to t('.show'), @event
 \|
-= link_to 'Back', events_path
+= link_to t('.back'), events_path

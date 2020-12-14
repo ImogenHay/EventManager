@@ -1,17 +1,17 @@
 
 
 %p
-  %b Location:
+  %b= t('.location')
   = @review.location.name
 %p
-  %b Description:
+  %b= t('.description')
   = @review.description
 %p
-  %b Rating:
+  %b= t('.rating')
   - (1..@review.rating).each do |i|
     %i.fa.fa-fw.fa-star
   = @review.rating
 
-= link_to 'Edit', edit_review_path(@review)
+= link_to t('.edit'), edit_review_path(@review)
 \|
-= link_to 'Back', reviews_path
+= link_to t('.back'), reviews_path

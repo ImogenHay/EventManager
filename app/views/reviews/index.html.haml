@@ -1,11 +1,11 @@
-%h1 Your Reviews
+%h1= I18n.t('.reviewtitle')
 
 %table
   %thead
     %tr
-      %th Location
-      %th Description
-      %th Rating
+      %th= t('.location')
+      %th= t('.description')
+      %th= t('.rating')
       %th
       %th
       %th
@@ -23,14 +23,14 @@
         %td{:class => "#{row_class} plain"}
           - (1..review.rating).each do |i|
             %i.fa.fa-fw.fa-star
-        %td{:class => "#{row_class} plain"}= link_to 'Show', review
-        %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_review_path(review)
-        %td{:class => "#{row_class} plain"}= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' }
+        %td{:class => "#{row_class} plain"}= link_to t('.show'), review
+        %td{:class => "#{row_class} plain"}= link_to t('.edit'), edit_review_path(review)
+        %td{:class => "#{row_class} plain"}= link_to t('.destroy'), review, method: :delete, data: { confirm: I18n.t('.confirm') }
 
 %br
 
-= link_to 'Leave Reviews', locations_path
+= link_to I18n.t('.reviewnew'), locations_path
 %p
-%h4 Table Styles:
-%input#plainb{onclick: "SetTableStyle('Plain')", type: "button", value: "Plain"}
-%input#brightb{onclick: "SetTableStyle('Bright')", type: "button", value: "Bright"}
+%h4= I18n.t('.styles')
+%input#plainb{onclick: "SetTableStyle(t('.plain'))", type: "button", value: "Plain"}
+%input#brightb{onclick: "SetTableStyle(t('.bright'))", type: "button", value: "Bright"}

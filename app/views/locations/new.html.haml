@@ -1,5 +1,5 @@
-%h1 Adding Venue
+%h1= I18n.t('.locationcreate')
 
 = render 'form'
 
-= link_to 'Back', locations_path
+= link_to t('.back'), locations_path

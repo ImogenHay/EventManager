@@ -1,7 +1,7 @@
-%h1 Editing Review
+%h1= I18n.t('.reviewedit')
 
 = render 'form'
 
-= link_to 'Show', @review
+= link_to t('.show'), @review
 \|
-= link_to 'Back', reviews_path
+= link_to t('.back'), reviews_path

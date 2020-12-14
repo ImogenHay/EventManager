@@ -1,8 +1,8 @@
 %br
 %p
-= button_tag "Current Date/Time", type: "button", onclick: "get_reading(); "
+= button_tag t('.button'), type: "button", onclick: "get_reading(); "
 %b
-  The current date is:
+  = t('.date')
   %span#reading
 %br
 %p

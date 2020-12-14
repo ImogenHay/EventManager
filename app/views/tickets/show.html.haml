@@ -1,31 +1,31 @@
 
 
 %p
-  %b First name:
+  %b= t('.fname')
   = @ticket.first_name
 %p
-  %b Last name:
+  %b= t('.lname')
   = @ticket.last_name
 %p
-  %b Event:
+  %b= t('.event')
   = @ticket.event.name
 %p
-  %b Location:
+  %b= t('.location')
   = @ticket.event.location.name
 %p
-  %b Date:
+  %b= t('.date')
   = @ticket.event.date
 %p
-  %b Start:
+  %b= t('.start')
   = @ticket.event.start
 %p
-  %b Age:
+  %b= t('.age')
   = @ticket.age
   - if @ticket.age < 18
-    ='(child)'
+    =t('.child')
   - else
-    ='(adult)'
+    =t('.adult')
 
-= link_to 'Edit', edit_ticket_path(@ticket)
+= link_to t('.edit'), edit_ticket_path(@ticket)
 \|
-= link_to 'Back', tickets_path
+= link_to t('.back'), tickets_path

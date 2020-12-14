@@ -1,14 +1,14 @@
-%h1 Your Tickets
+%h1= I18n.t('.tickettitle')
 
 
 
 %table
   %thead
     %tr
-      %th Event
-      %th First name
-      %th Last name
-      %th Age
+      %th= t('.event')
+      %th= t('.fname')
+      %th= t('.lname')
+      %th= t('.age')
       %th
       %th
       %th
@@ -26,20 +26,19 @@
         %td{:class => "#{row_class} plain"}= ticket.last_name
         %td{:class => "#{row_class} plain"}
           - if ticket.age < 18
-            ='Child'
+            =t('.child')
           - else
-            ='Adult'
-        %td{:class => "#{row_class} plain"}= link_to 'Show', ticket
-        %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_ticket_path(ticket)
-        %td{:class => "#{row_class} plain"}= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' }
-        %td{:class => "#{row_class} plain"}= link_to "Hide", "", class: 'hide', data: {'js-hide-link' => true}
+            =t('.adult')
+        %td{:class => "#{row_class} plain"}= link_to t('.show'), ticket
+        %td{:class => "#{row_class} plain"}= link_to t('.edit'), edit_ticket_path(ticket)
+        %td{:class => "#{row_class} plain"}= link_to t('.destroy'), ticket, method: :delete, data: { confirm: I18n.t('.confirm') }
 
 
 
 %br
 
-= link_to 'Book Tickets', events_path
+= link_to I18n.t('.ticketnew'), events_path
 %p
-%h4 Table Styles:
-%input#plainb{onclick: "SetTableStyle('Plain')", type: "button", value: "Plain"}
-%input#brightb{onclick: "SetTableStyle('Bright')", type: "button", value: "Bright"}
+%h4= I18n.t('.styles')
+%input#plainb{onclick: "SetTableStyle(t('.plain'))", type: "button", value: "Plain"}
+%input#brightb{onclick: "SetTableStyle(t('.bright'))", type: "button", value: "Bright"}

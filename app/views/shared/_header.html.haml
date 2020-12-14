@@ -3,22 +3,22 @@
   %a.closebtn{href: "javascript:void(0)", onclick: "closeNav()"} ×
   %a{href: "/"}
     %i.fa.fa-fw.fa-home
-    Home
+    = t('.home')
   %a{href: "/about"}
     %i.fa.fa-fw.fa-info-circle
-    About Us
+    = t('.about')
   %a{href: "/events"}
     %i.fa.fa-fw.fa-star
-    Events
+    = t('.events')
   %a{href: "/locations"}
     %i.fa.fa-fw.fa-globe
-    Venues
+    = t('.venues')
   %a{href: "/resources"}
     %i.fa.fa-fw.fa-search
-    Resources
+    = t('.resources')
   %a{href: "/contact"}
     %i.fa.fa-fw.fa-envelope
-    Contact Us
+    = t('.contact')
 #main
   %nav
     %header
@@ -36,7 +36,7 @@
           = link_to t('sign_up'), new_user_registration_path
 
   %p
-  %button.openbtn{onclick: "openNav()"} ☰ Open Sidebar
+  %button.openbtn{onclick: "openNav()"}= t('.open')
 
   - flash.each do |key, value|
     = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?

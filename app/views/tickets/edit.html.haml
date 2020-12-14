@@ -1,7 +1,7 @@
-%h1 Editing Ticket
+%h1= I18n.t('.ticketedit')
 
 = render 'form'
 
-= link_to 'Show', @ticket
+= link_to t('.show'), @ticket
 \|
-= link_to 'Back', tickets_path
+= link_to t('.back'), tickets_path

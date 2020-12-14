@@ -1,18 +1,18 @@
 %h1=  t('.title')  #title and description of resources page, defined in en.yml
 
 
-%h2{id: "locations", onclick: "ToggleText(this)"} Venues:
+%h2{id: "locations", onclick: "ToggleText(this)"}=  I18n.t('.locationtitle')
 %div{id: "locationsp"}
-  = link_to 'Venues Page', locations_path
-  %br= link_to 'Add Venue', new_location_path
+  = link_to t('.pvenues'), locations_path
+  %br= link_to t('.avenues'), new_location_path
   %table
     %thead
       %tr
-        %th Name
-        %th Description
-        %th Country
-        %th Street
-        %th Postcode
+        %th=  t('.lname')
+        %th=  t('.ldescription')
+        %th=  t('.country')
+        %th=  t('.street')
+        %th=  t('.postcode')
         %th
         %th
         %th
@@ -30,25 +30,25 @@
           %td{:class => "#{row_class} plain"}= location.country
           %td{:class => "#{row_class} plain"}= location.street
           %td{:class => "#{row_class} plain"}= location.postcode
-          %td{:class => "#{row_class} plain"}= link_to 'Show', location
-          %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_location_path(location)
-          %td{:class => "#{row_class} plain"}= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?  This will remove all associated reviews and events!' }
+          %td{:class => "#{row_class} plain"}= link_to t('.show'), location
+          %td{:class => "#{row_class} plain"}= link_to t('.edit'), edit_location_path(location)
+          %td{:class => "#{row_class} plain"}= link_to t('.destroy'), location, method: :delete, data: { confirm: I18n.t('.confirm') }
 
-%h2{id: "events", onclick: "ToggleText(this)"} Current Events:
+%h2{id: "events", onclick: "ToggleText(this)"}=  t('.events')
 %div{id: "eventsp"}
-  = link_to 'Events Page', events_path
+  = link_to t('.pevents'), events_path
   %table
     %thead
       %tr
-        %th Name
-        %th Location
-        %th Type
-        %th Date
-        %th Description
-        %th Start
-        %th End
-        %th Tickets
-        %th Price
+        %th=  t('.ename')
+        %th=  t('.location')
+        %th=  t('.type')
+        %th=  t('.date')
+        %th=  t('.edescription')
+        %th=  t('.start')
+        %th=  t('.end')
+        %th=  t('.price')
+        %th=  t('.tickets')
         %th
         %th
         %th
@@ -72,18 +72,18 @@
           %td{:class => "#{row_class} plain"}
             = '£'
             = event.price
-          %td{:class => "#{row_class} plain"}= link_to 'Show', event
-          %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_event_path(event)
-          %td{:class => "#{row_class} plain"}= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure? This will remove all associated tickets!' }
+          %td{:class => "#{row_class} plain"}= link_to t('.show'), event
+          %td{:class => "#{row_class} plain"}= link_to t('.edit'), edit_event_path(event)
+          %td{:class => "#{row_class} plain"}= link_to t('.destroy'), event, method: :delete, data: { confirm: I18n.t('.confirm') }
 
 
 
-%h2{id: "reviews", onclick: "ToggleText(this)"} Your Reviews:
+%h2{id: "reviews", onclick: "ToggleText(this)"}= I18n.t('.reviewtitle')
 %div{id: "reviewsp"}
-  = link_to 'View Your Reviews', reviews_path
+  = link_to t('.vreviews'), reviews_path
 
-%h2{id: "tickets", onclick: "ToggleText(this)"} Your Tickets:
+%h2{id: "tickets", onclick: "ToggleText(this)"}= I18n.t('.tickettitle')
 %div{id: "ticketsp"}
-  = link_to 'View Your Tickets', tickets_path
+  = link_to t('.vtickets'), tickets_path
 
 %br

@@ -1,35 +1,35 @@
 
 
 %p
-  %b Name:
+  %b= t('.name')
   = @event.name
 %p
-  %b Location:
+  %b= t('.location')
   = @event.location.name
 %p
-  %b Type:
+  %b= t('.type')
   = @event.event_type
 %p
-  %b Date:
+  %b= t('.date')
   = @event.date
 %p
-  %b Description:
+  %b= t('.description')
   = @event.description
 %p
-  %b Start:
+  %b= t('.start')
   = @event.start.strftime("%I:%M%p")
 %p
-  %b End:
+  %b= t('.end')
   = @event.end.strftime("%I:%M%p")
 %p
-  %b Tickets Available:
+  %b= t('.tickets')
   = @event.num_tickets
 %p
-  %b Price:
+  %b= t('.price')
   = '£'
   = @event.price
 
-%b Your Tickets:
+%b= I18n.t('.tickettitle')
 %table
   %tbody
     - @event.tickets.each_with_index do |ticket, i|
@@ -42,12 +42,12 @@
         %tr{id: "ticket_#{ticket.id}"}
           %td{:class => "#{row_class} plain"}= ticket.first_name
           %td{:class => "#{row_class} plain"}= ticket.last_name
-          %td{:class => "#{row_class} plain"}= link_to 'Show', ticket
-          %td{:class => "#{row_class} plain"}= link_to 'Edit', edit_ticket_path(ticket)
-          %td{:class => "#{row_class} plain"}= link_to 'Destroy', ticket, :method => :delete, :data => { :confirm => 'Are you sure? This will remove all associated tickets!' }, :remote => true
+          %td{:class => "#{row_class} plain"}= link_to t('.show'), ticket
+          %td{:class => "#{row_class} plain"}= link_to t('.edit'), edit_ticket_path(ticket)
+          %td{:class => "#{row_class} plain"}= link_to t('.destroy'), ticket, :method => :delete, :data => { :confirm => 'Are you sure? This will remove all associated tickets!' }, :remote => true
 
-%p= link_to 'Book Ticket', new_ticket_path(event_id: @event)
+%p= link_to t('.book_ticket'), new_ticket_path(event_id: @event)
 
-= link_to 'Edit', edit_event_path(@event)
+= link_to t('.edit'), edit_event_path(@event)
 \|
-= link_to 'Back', events_path
+= link_to t('.back'), events_path
