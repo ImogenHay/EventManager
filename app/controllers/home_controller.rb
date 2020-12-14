@@ -1,12 +1,5 @@
 class HomeController < ApplicationController
-  def home
-  end
 
-  def contact
-  end
-
-  def about
-  end
 
   def request_contact #method called when submit button pressed
     name = params[:name]

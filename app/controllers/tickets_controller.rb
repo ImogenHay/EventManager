@@ -8,18 +8,10 @@ class TicketsController < ApplicationController
     @tickets = Ticket.user_tickets(current_user).ordered #scope uses devise current user object to restrict search
   end
 
-  # GET /tickets/1
-  # GET /tickets/1.json
-  def show
-  end
 
   # GET /tickets/new
   def new
     @ticket = @event.tickets.new #sets event of ticket
-  end
-
-  # GET /tickets/1/edit
-  def edit
   end
 
   # POST /tickets

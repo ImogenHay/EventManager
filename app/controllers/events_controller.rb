@@ -7,19 +7,12 @@ class EventsController < ApplicationController
     @events = Event.ordered.indate #uses scopes to filter events
   end
 
-  # GET /events/1
-  # GET /events/1.json
-  def show
-  end
 
   # GET /events/new
   def new
     @event = @location.events.new #sets location of event
   end
 
-  # GET /events/1/edit
-  def edit
-  end
 
   # POST /events
   # POST /events.json
