@@ -10,6 +10,8 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap-theme.min
+ *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
@@ -138,3 +140,68 @@
    .sidebar {padding-top: 15px;}
    .sidebar a {font-size: 18px;}
  }
+
+ // Tiny devices (landscape phones, 576px and up)
+@media (max-width: 575px) {
+  body {font-size: 10px;}
+  h1 {font-size: 2.15em;}
+  h2 {font-size: 1.75em;}
+  h3 {font-size: 0.90em;}
+  h4 {font-size: 0.65em;}
+  tr{
+    font-size: 0.4em;
+    height: 0.6em;
+  }
+}
+
+ // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  body {font-size: 10px;}
+  h1 {font-size: 2.30em;}
+  h2 {font-size: 1.85em;}
+  h3 {font-size: 1.05em;}
+  h4 {font-size: 0.75em;}
+  tr{
+    font-size: 0.6em;
+    height: 0.8em;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  body {font-size: 12px;}
+  h1 {font-size: 2.45em;}
+  h2 {font-size: 1.95em;}
+  h3 {font-size: 1.2em;}
+  h4 {font-size: 0.85em;}
+  tr{
+    font-size: 0.8em;
+    height: 1.0em;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  body {font-size: 14px;}
+  h1 {font-size: 2.60em;}
+  h2 {font-size: 2.10em;}
+  h3 {font-size: 1.35em;}
+  h4 {font-size: 0.85em;}
+  tr{
+    font-size: 1.0em;
+    height: 1.2em;
+  }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  body {font-size: 16px;}
+  h1 {font-size: 2.75em;}
+  h2 {font-size: 2.25em;}
+  h3 {font-size: 1.5em;}
+  h4 {font-size: 1.0em;}
+  tr{
+    font-size: 1.2em;
+    height: 1.4em;
+  }
+}

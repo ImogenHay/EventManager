@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2020_12_08_144200) do
     t.string "event_type"
     t.date "date", null: false
     t.text "description"
-    t.time "start"
-    t.time "end"
+    t.time "start", null: false
+    t.time "end", null: false
     t.integer "num_tickets"
     t.decimal "price"
     t.datetime "created_at", null: false
