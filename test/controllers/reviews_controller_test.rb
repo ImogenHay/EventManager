@@ -14,11 +14,16 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get reviews_url
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'Your Reviews'
+    assert_select 'h4', 'Table Styles:'
   end
 
   test "should get new" do
     get new_review_url, params: {location_id: @location.id}
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'Leave Your Review'
   end
 
   test "should create review" do
@@ -32,11 +37,14 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
   test "should show review" do
     get review_url(@review)
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
   end
 
   test "should get edit" do
     get edit_review_url(@review)
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'Editing Review'
   end
 
   test "should update review" do

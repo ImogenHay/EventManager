@@ -12,11 +12,16 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get events_url
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'Events'
+    assert_select 'h4', 'Table Styles:'
   end
 
   test "should get new" do
     get new_event_url, params: {location_id: @location.id}
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'Creating Event'
   end
 
   test "should create event" do
@@ -30,11 +35,15 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   test "should show event" do
     get event_url(@event)
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'b', 'Your Tickets:'
   end
 
   test "should get edit" do
     get edit_event_url(@event)
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'Editing Event'
   end
 
   test "should update event" do

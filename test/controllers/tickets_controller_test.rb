@@ -15,11 +15,16 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get tickets_url
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'Your Tickets'
+    assert_select 'h4', 'Table Styles:'
   end
 
   test "should get new" do
     get new_ticket_url, params: {event_id: @event.id}
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'Book Your Ticket'
   end
 
   test "should create ticket" do
@@ -33,11 +38,14 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
   test "should show ticket" do
     get ticket_url(@ticket)
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
   end
 
   test "should get edit" do
     get edit_ticket_url(@ticket)
     assert_response :success
+    assert_select 'title', 'ImmyEvents'
+    assert_select 'h1', 'Editing Ticket'
   end
 
   test "should update ticket" do
