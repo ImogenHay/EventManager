@@ -19,4 +19,4 @@
     = f.label :rating
     = f.number_field :rating
   .actions
-    = f.submit I18n.t('.save')
+    = button_tag I18n.t('.save'), onclick: "ValidateReviewForm()"

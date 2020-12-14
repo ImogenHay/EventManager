@@ -37,4 +37,4 @@
     = f.label :price
     = f.text_field :price
   .actions
-    = f.submit I18n.t('.save')
+    = button_tag I18n.t('.save'), onclick: "ValidateEventForm()"

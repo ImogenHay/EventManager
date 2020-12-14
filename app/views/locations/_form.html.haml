@@ -24,4 +24,4 @@
     = f.label :postcode
     = f.text_field :postcode
   .actions
-    = f.submit I18n.t('.save')
+    = button_tag I18n.t('.save'), onclick: "ValidateLocationForm()"

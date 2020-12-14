@@ -40,15 +40,15 @@ function closeNav() {
 }
 
 
-function ToggleText(elem){
+function ToggleText(elem){ //toggle text (hide//show) paragraph below element
   $('#'+elem.id+"p").toggle();
 }
 
-function SetFontSize(val){
+function SetFontSize(val){ //change size of all text to specific value
   $("*").each(function(i,e){e.style.fontSize = val});
 }
 
-function SetPageStyle(val){
+function SetPageStyle(val){ //changes style of page
   if(val === 'Normal'){
     $("*").each(function(i,e){e.style.background = "salmon"});
     $("*").each(function(i,e){e.style.color = "rgb(53, 54, 67)"});
@@ -59,7 +59,7 @@ function SetPageStyle(val){
   }
 }
 
-function SetTableStyle(sty){
+function SetTableStyle(sty){ //changes colours of table
   if(sty === 'Plain'){
     $("td").removeClass("bright")
     $("td").addClass("plain")
@@ -70,16 +70,16 @@ function SetTableStyle(sty){
   }
 }
 
-function ValidateLocationForm(){
+function ValidateLocationForm(){ //validates form before sent to server
   $('#LocationForm').validate({
     rules: {
-      'location[name]': {required: true},
+      'location[name]': {required: true}, //ensure these values present
       'location[country]': {required: true},
       'location[street]': {required: true},
       'location[postcode]': {required: true}
     },
     messages: {
-      'location[name]': {required: "You must provide the location name"},
+      'location[name]': {required: "You must provide the location name"}, //message shown when invalid
       'location[country]': {required: "You must provide a country"},
       'location[street]': {required: "You must provide a street name"},
       'location[postcode]': {required: "You must provide a postcode"}
@@ -87,28 +87,28 @@ function ValidateLocationForm(){
   });
 }
 
-function ValidateEventForm(){
+function ValidateEventForm(){ //validates form before sent to server
   $('#EventForm').validate({
     rules: {
-      'event[name]': {required: true}
+      'event[name]': {required: true} //ensure this value present
     },
     messages: {
-      'event[name]': {required: "You must provide an event name"}
+      'event[name]': {required: "You must provide an event name"} //message shown when invalid
     }
   });
 }
 
-function ValidateReviewForm(){
+function ValidateReviewForm(){ //validates form before sent to server
   $('#ReviewForm').validate({
     rules: {
       'review[rating]': {
-        required: true,
-        digits: true,
-        range: [1, 5],
+        required: true, //ensures this value present
+        digits: true, //ensure this value is a digit
+        range: [1, 5], //ensures this value between 1-5
       }
     },
     messages: {
-      'review[rating]': {
+      'review[rating]': { //message shown when invalid
         required: "You must provide a rating out of 5",
         digits: "rating must be a whole number out of 5",
         range: "rating must be between 1 and 5"
@@ -117,51 +117,51 @@ function ValidateReviewForm(){
   });
 }
 
-function ValidateTicketForm(){
+function ValidateTicketForm(){ //validates form before sent to server
   $('#TicketForm').validate({
     rules: {
-      'ticket[first_name]': {required: true},
+      'ticket[first_name]': {required: true}, //ensure these values present
       'ticket[last_name]': {required: true},
       'ticket[age]': {
         required: true,
-        digits: true,
-        range: [0, 150],
+        digits: true, //ensure this value is a digit
+        range: [0, 150],  //ensures this value between 1-5
       }
     },
     messages: {
-      'ticket[first_name]': {required: "You must provide a first name"},
+      'ticket[first_name]': {required: "You must provide a first name"}, //message shown when invalid
       'ticket[last_name]': {required: "You must provide a second name"},
       'ticket[age]': {
         required: "You must provide an age",
-        digits: "age must be a whole number",
+        digits: "Age must be a whole number",
         range: "rating must be between 0 and 150"
       }
     }
   });
 }
 
-function ValidateContactForm(){
+function ValidateContactForm(){ //validates form before sent to server
   $('#ContactForm').validate({
     rules: {
-      'name': {required: true},
-      'email': {required: true, email: true},
+      'name': {required: true},  //ensure these values present
+      'email': {required: true, email: true},  //ensure valid email
       'message': {required: true},
     },
     messages: {
-      'name': {required: "Must provide name"},
+      'name': {required: "Must provide name"}, //message shown when invalid
       'email': {required: "Must provide email", email: "Must be valid email"},
       'message': {required: "Must provide message"},
     }
   });
 }
 
-$(document).ready(function() {
+$(document).ready(function() { //occurs when DOM loaded
 
-  if(document.getElementById('welcome_id')){
+  if(document.getElementById('welcome_id')){ //hides paragrams when page initially loaded
     $('#currentp, #venuesp, #accountsp, #accessibilityp').hide();
   }
 
-  if(document.getElementById('LocationForm')){
+  if(document.getElementById('LocationForm')){ //validates page when loaded
     ValidateLocationForm();
   }
 

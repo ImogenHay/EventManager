@@ -22,4 +22,4 @@
     = f.label :age
     = f.number_field :age
   .actions
-    = f.submit I18n.t('.save')
+    = button_tag I18n.t('.save'), onclick: "ValidateTicketForm()"
