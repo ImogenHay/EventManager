@@ -8,7 +8,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get root_url
     assert_response :success
 
-    assert_select 'title', 'ImmyEvents'
+    assert_select 'title', 'ImmyEvents'  #test basic view content of page loaded
     assert_select 'h1', 'Welcome to ImmyEvents - Event Manager'
     assert_select 'h2', 'Current Events'
     assert_select 'h2', 'Venues'
@@ -21,7 +21,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get contact_url
     assert_response :success
     assert_template layout: 'application'
-    assert_select 'title', 'ImmyEvents'
+    assert_select 'title', 'ImmyEvents'  #test basic view content of page loaded
     assert_select 'h1', 'Contact Us'
     assert_select 'h4', 'Complete the following form to get in touch with us.'
   end
@@ -30,7 +30,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     get about_url
     assert_response :success
 
-    assert_select 'title', 'ImmyEvents'
+    assert_select 'title', 'ImmyEvents'  #test basic view content of page loaded
     assert_select 'h1', 'About Us'
   end
 

@@ -1,7 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   before_action :set_event, only: [:new, :create]
-  before_action :authenticate_user!
+  before_action :authenticate_user! #need to be logged in to book tickets
   # GET /tickets
   # GET /tickets.json
   def index
@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/new
   def new
-    @ticket = @event.tickets.new
+    @ticket = @event.tickets.new #sets event of ticket
   end
 
   # GET /tickets/1/edit
@@ -25,8 +25,8 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = @event.tickets.new(ticket_params)
-    @ticket.user = current_user
+    @ticket = @event.tickets.new(ticket_params) #new ticket with only trusted parameters
+    @ticket.user = current_user #set user to current user logged in
 
     respond_to do |format|
       if @ticket.save
@@ -57,7 +57,7 @@ class TicketsController < ApplicationController
   # DELETE /tickets/1.json
   def destroy
     @ticket.destroy
-    respond_to do |format|
+    respond_to do |format| #uses AJAX for live updates when review destroyed
       format.html { redirect_to tickets_url, notice: 'Ticket was successfully destroyed.' }
       format.js { flash[:notice] = 'Ticket was successfully destroyed.'}
       format.json { head :no_content }
@@ -75,6 +75,7 @@ class TicketsController < ApplicationController
       params.require(:ticket).permit(:event_id, :first_name, :last_name, :age)
     end
 
+    #sets event to event of ticket
     def set_event
       @event = Event.find_by(id: params[:event_id]) || Event.find(ticket_params[:event_id])
     end

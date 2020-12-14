@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :set_location, only: [:new, :create]
-  before_action :authenticate_user!
+  before_action :authenticate_user! #need to be logged in to leave reviews
   # GET /reviews
   # GET /reviews.json
   def index
@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = @location.reviews.new
+    @review = @location.reviews.new #sets location of review
   end
 
   # GET /reviews/1/edit
@@ -25,8 +25,8 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = @location.reviews.new(review_params)
-    @review.user = current_user
+    @review = @location.reviews.new(review_params) #new review with only trusted parameters
+    @review.user = current_user #set user to current user logged in
 
     respond_to do |format|
       if @review.save
@@ -57,7 +57,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1.json
   def destroy
     @review.destroy
-    respond_to do |format|
+    respond_to do |format| #uses AJAX for live updates when review destroyed
       format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
       format.js { flash[:notice] = 'Review was successfully destroyed.'}
       format.json { head :no_content }
@@ -75,6 +75,7 @@ class ReviewsController < ApplicationController
       params.require(:review).permit(:location_id, :description, :rating)
     end
 
+  #sets location to location of review
     def set_location
       @location = Location.find_by(id: params[:location_id]) || Location.find(review_params[:location_id])
     end

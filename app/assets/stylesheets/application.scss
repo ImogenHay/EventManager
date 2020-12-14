@@ -44,6 +44,8 @@
    padding: 5px;
  }
 
+
+/* styles for different table options */
  td.odd.plain{
     background-color: rgb(200, 166, 163);
  }
@@ -60,11 +62,13 @@
     background-color: rgb(159, 224, 202);
  }
 
+/* defualt style for row of table */
  tr{
    font-size: 1.2em;
    height: 1.4em;
  }
 
+/* responsive table than gets bigger when you hover over */
  tr:hover {
    cursor: pointer;
    font-size: 1.8em;

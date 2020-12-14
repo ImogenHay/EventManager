@@ -5,7 +5,7 @@ class ResourcesControllerTest < ActionDispatch::IntegrationTest
     get resources_url
     assert_response :success
 
-    assert_select 'title', 'ImmyEvents'
+    assert_select 'title', 'ImmyEvents'  #test basic view content of page loaded
     assert_select 'h1', 'Resources Page'
     assert_select 'h2', 'Venues'
     assert_select 'h2', 'Current Events'

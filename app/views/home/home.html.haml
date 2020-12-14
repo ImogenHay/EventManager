@@ -1,7 +1,7 @@
 %h1{id: "welcome_id"}=  t('.title')  #title and description of home page, defined in en.yml
 %h4= t('.description')
 
-%h2{id: "current", onclick: "ToggleText(this)"}=  t('.current')
+%h2{id: "current", onclick: "ToggleText(this)"}=  t('.current') #when clicked text shows or hides
 %p{id: "currentp"}=  t('.currentp')
 
 %h2{id: "venues", onclick: "ToggleText(this)"}=  t('.venues')
@@ -14,6 +14,7 @@
 
 
 %h2{id: "accessibility", onclick: "ToggleText(this)"}=  t('.accessibility')
+
 
 %div{id: "accessibilityp"}
   %p=  t('.font')

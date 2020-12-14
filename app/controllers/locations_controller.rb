@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.ordered
+    @locations = Location.ordered #uses scopes to filter locaions
   end
 
   # GET /locations/1
@@ -24,7 +24,7 @@ class LocationsController < ApplicationController
   # POST /locations
   # POST /locations.json
   def create
-    @location = Location.new(location_params)
+    @location = Location.new(location_params) #new location with only trusted parameters
 
     respond_to do |format|
       if @location.save

@@ -4,14 +4,14 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
 
   include Devise::Test::IntegrationHelpers
 
-  setup do
+  setup do #use fixtures to setup values
     @location = locations(:one)
   end
 
   test "should get index" do
     get locations_url
     assert_response :success
-    assert_select 'title', 'ImmyEvents'
+    assert_select 'title', 'ImmyEvents'  #test basic view content of page loaded
     assert_select 'h1', 'Venues'
     assert_select 'h4', 'Table Styles:'
   end
@@ -19,11 +19,11 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get new_location_url
     assert_response :success
-    assert_select 'title', 'ImmyEvents'
+    assert_select 'title', 'ImmyEvents'  #test basic view content of page loaded
     assert_select 'h1', 'Adding Venue'
   end
 
-  test "should create location" do
+  test "should create location" do #test valid location is created
     assert_difference('Location.count') do
       post locations_url, params: { location: { country: @location.country, description: @location.description, name: @location.name + " create", postcode: @location.postcode, street: @location.street } }
     end
@@ -34,7 +34,7 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
   test "should show location" do
     get location_url(@location)
     assert_response :success
-    assert_select 'title', 'ImmyEvents'
+    assert_select 'title', 'ImmyEvents'  #test basic view content of page loaded
     assert_select 'b', 'Events:'
     assert_select 'b', 'Reviews:'
   end
@@ -42,7 +42,7 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
   test "should get edit" do
     get edit_location_url(@location)
     assert_response :success
-    assert_select 'title', 'ImmyEvents'
+    assert_select 'title', 'ImmyEvents'  #test basic view content of page loaded
     assert_select 'h1', 'Editing Location'
   end
 

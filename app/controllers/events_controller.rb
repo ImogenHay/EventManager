@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :set_location, only: [:new, :create]
+  before_action :set_location, only: [:new, :create] #every event has a location
   # GET /events
   # GET /events.json
   def index
-    @events = Event.ordered.indate
+    @events = Event.ordered.indate #uses scopes to filter events
   end
 
   # GET /events/1
@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = @location.events.new
+    @event = @location.events.new #sets location of event
   end
 
   # GET /events/1/edit
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = @location.events.new(event_params)
+    @event = @location.events.new(event_params) #new event with only trusted parameters
 
     respond_to do |format|
       if @event.save
@@ -55,7 +55,7 @@ class EventsController < ApplicationController
   # DELETE /events/1.json
   def destroy
     @event.destroy
-    respond_to do |format|
+    respond_to do |format| #uses AJAX for live updates when event destroyed
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.js { flash[:notice] = 'Event was successfully destroyed.'}
       format.json { head :no_content }
@@ -73,6 +73,7 @@ class EventsController < ApplicationController
       params.require(:event).permit(:name, :location_id, :event_type, :date, :description, :start, :end, :num_tickets, :price)
     end
 
+    #sets location to location of event
     def set_location
       @location = Location.find_by(id: params[:location_id]) || Location.find(event_params[:location_id])
     end
